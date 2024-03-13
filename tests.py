@@ -15,7 +15,7 @@ def requests_mock():
     return mock_response
 
 def test_fetch_pokemon_data_success(requests_mock):
-    data = fetch_pokemon_data()
+    data = fetch_pokemon_data("http://pokeapi.co/api/v2/pokemon/")
     assert data == {
         "results": [
             {"name": "bulbasaur"},
