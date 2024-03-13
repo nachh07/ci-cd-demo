@@ -5,9 +5,6 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
-
 def fetch_pokemon_data(url: str) -> dict | None:
     try:
         response = requests.get(url)
