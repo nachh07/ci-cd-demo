@@ -3,7 +3,7 @@ from unittest.mock import MagicMock
 from app import fetch_pokemon_data, get_pokemon_names
 
 @pytest.fixture
-def requests_mock(mocker):
+def requests_mock():
     mock_response = MagicMock()
     mock_response.json.return_value = {
         "results": [
@@ -12,7 +12,7 @@ def requests_mock(mocker):
             {"name": "squirtle"}
         ]
     }
-    return mocker.patch('main.requests.get', return_value=mock_response)
+    return mock_response
 
 def test_fetch_pokemon_data_success(requests_mock):
     data = fetch_pokemon_data()
