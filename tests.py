@@ -25,7 +25,7 @@ def test_fetch_pokemon_data_success(requests_mock):
     }
 
 def test_get_pokemon_names(requests_mock):
-    data = fetch_pokemon_data()
+    data = fetch_pokemon_data("http://pokeapi.co/api/v2/pokemon/")
     names = get_pokemon_names(data)
     expected_names = ["bulbasaur", "charmander", "squirtle"]
     assert names == expected_names
